@@ -1,0 +1,23 @@
+{
+  "name": "hardhat-project",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "flatten": "hardhat flatten contracts/BitOre.sol > deploy/BitOreDeploy.sol && hardhat flatten contracts/BitOreToken.sol > deploy/BitOreTokenDeploy.sol",
+    "mining": "npm rum compile && ts-node ./minerNode/miner.ts",
+    "test": "hardhat test",
+    "deploy": "npm run compile && hardhat run scripts/deploy.ts",
+    "lint": "prettier --list-different --plugin=prettier-plugin-solidity \"./**/*.sol\""
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",
+    "hardhat": "^2.22.6",
+    "prettier": "^3.3.3",
+    "prettier-plugin-solidity": "^1.3.1"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5",
+    "viem": "^2.17.3"
+  }
+}
