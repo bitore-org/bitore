@@ -2,6 +2,15 @@
 
 BitOre is an innovative blockchain mining project that implements a sophisticated Proof-of-Work (PoW) system. It introduces a dynamic, epoch-based mining mechanism with adaptive difficulty and a unique reward system based on miners' historical gas usage. This project aims to create a more efficient and fair mining environment while maintaining network security.
 
+### BitOre protocol for accepting PoW solutions in 3rd party contracts:
+```
+interface IBitOreProtocol {
+    function mintEpoch(address to, uint256 epoch, bytes32 nonce, uint256 epochMinersLimit) external;
+
+    function mintChip(address to, uint256 epoch, bytes32 nonce, uint256 position, uint256 epochBlock, uint256 epochMinersLimit) external;
+}
+```
+
 ## Table of Contents
 
 1. [Features](#features)
